@@ -180,7 +180,12 @@ end
 player_stats("Brook Lopez")
 
 def big_shoe_rebounds
+  a = {shoe:0}
   players.map do |inner_value|
-    return inner_value[:rebounds] if inner_value[:shoe] > 18
+     if inner_value[:shoe] > a[:shoe]
+      a = inner_value
+      # binding.pry
+     end
   end
+  a[:rebounds]
 end
